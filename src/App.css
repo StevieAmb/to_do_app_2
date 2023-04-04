@@ -2,6 +2,13 @@
   text-align: center;
 }
 
+.main-content {
+  padding-top: 4.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 27rem;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -1,0 +1,10 @@
+.container {
+  background-color: #CBC3E3;
+  padding: 3rem;
+  border-radius: 3rem;
+}
+
+input {
+  width: 20rem;
+  padding: 1rem;
+}
