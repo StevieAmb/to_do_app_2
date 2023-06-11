@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState} from 'react';
 import Header from './Header';
 import Footer from './Footer';
 
@@ -8,11 +8,14 @@ import ListInput from './ListInput';
 
 
 const App: React.FC = () => {
+
+  const [ promise, setPromise ] = useState('')
+
   return (
     <div className="App">
       <Header/>
       <main className='main-content'>
-      <ListInput />
+      <ListInput setPromise={setPromise}/>
       <ListContainer/>
       </main>
       <Footer />

@@ -15,4 +15,8 @@ describe('template spec', () => {
     .type('I promise to go to bed by 9PM')
   })
 
+  it('should have a button', () => {
+    cy.get('button')
+  })
+
 })

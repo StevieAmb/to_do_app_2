@@ -1,9 +1,27 @@
-import React, { useState} from "react";
+import React, { useState, ChangeEvent, SetStateAction } from "react";
 import './ListInput.css'
 
-const ListInput: React.FC = () => {
+type Props = {
+  setPromise:(arg: string) => void
+}
 
-  const [ promise, setPromise ] = useState('')
+const ListInput: React.FC<Props> = ({
+  setPromise
+}) => {
+
+  const [userInput, setUserInput] = useState('')
+
+  const clearInput = () => {
+    setUserInput('')
+  }
+
+  const submitPromise = () => {
+    const promise = userInput
+    setPromise(promise)
+    clearInput()
+  }
+
+
 
   return (
     <form>
@@ -13,8 +31,8 @@ const ListInput: React.FC = () => {
           type="text"
           placeholder="Make a promise to yourself and keep it..."
           name="promise"
-          value={promise}
-          onChange={(e) => {setPromise(e.target.value)}}
+          value={userInput}
+          onChange={(e) => setUserInput(e.target.value)}
           />
           <button>Submit Your Promise</button>
       </div>
