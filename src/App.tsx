@@ -11,12 +11,13 @@ const App: React.FC = () => {
 
   const [ promise, setPromise ] = useState('')
 
+
   return (
     <div className="App">
       <Header/>
       <main className='main-content'>
       <ListInput setPromise={setPromise}/>
-      <ListContainer/>
+      <ListContainer promise={promise}/>
       </main>
       <Footer />
     </div>

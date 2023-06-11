@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent, SetStateAction } from "react";
+import React, { useState, FormEvent } from "react";
 import './ListInput.css'
 
 type Props = {
@@ -15,7 +15,8 @@ const ListInput: React.FC<Props> = ({
     setUserInput('')
   }
 
-  const submitPromise = () => {
+  const submitPromise = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
     const promise = userInput
     setPromise(promise)
     clearInput()
@@ -24,7 +25,7 @@ const ListInput: React.FC<Props> = ({
 
 
   return (
-    <form>
+    <form onSubmit={(e) => submitPromise(e)}>
       <div className="container">
         <input
           id="promise"
@@ -34,7 +35,12 @@ const ListInput: React.FC<Props> = ({
           value={userInput}
           onChange={(e) => setUserInput(e.target.value)}
           />
-          <button>Submit Your Promise</button>
+           <input                 // removed from the button
+            type="submit"
+            value="Submit Your Promise"
+            className="btn btn-dark btn-block" 
+          />
+          
       </div>
     </form>
   )

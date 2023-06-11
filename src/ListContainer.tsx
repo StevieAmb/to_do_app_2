@@ -1,9 +1,15 @@
 import React from 'react';
 
-const ListContainer: React.FC = () => {
+type Prop = {
+  promise: string;
+}
+
+const ListContainer: React.FC<Prop> = ({
+  promise
+}) => {
   return(
     <div>
-      This will have lists
+      {promise}
     </div>
   )
 }

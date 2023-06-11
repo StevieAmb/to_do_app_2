@@ -19,4 +19,11 @@ describe('template spec', () => {
     cy.get('button')
   })
 
+  it('should be able to submit a promise', () => {
+    cy.get('input[placeholder*="keep it"]')
+    .type('I promise to go to bed by 9PM')
+
+    cy.get('button').click()
+  })
+
 })
