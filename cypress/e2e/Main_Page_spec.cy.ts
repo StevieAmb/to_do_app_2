@@ -1,7 +1,12 @@
+import cypress from "cypress"
+
 describe('template spec', () => {
-  it('passes', () => {
-    cy.visit('https://example.cypress.io')
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/')
   })
 
-  it('')
+  it('should have a header', () => {
+    cy.get('header')
+    .contains('What Do You Need To Do Today?')
+  })
 })
