@@ -16,6 +16,7 @@ const ListInput: React.FC = () => {
           value={promise}
           onChange={(e) => {setPromise(e.target.value)}}
           />
+          <button>Submit Your Promise</button>
       </div>
     </form>
   )

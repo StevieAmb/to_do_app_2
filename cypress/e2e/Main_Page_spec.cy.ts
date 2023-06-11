@@ -9,4 +9,10 @@ describe('template spec', () => {
     cy.get('header')
     .contains('What Do You Need To Do Today?')
   })
+
+  it('should have an input field you can write in', () => {
+    cy.get('input[placeholder*="keep it"]')
+    .type('I promise to go to bed by 9PM')
+  })
+
 })
