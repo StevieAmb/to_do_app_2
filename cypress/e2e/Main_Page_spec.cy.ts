@@ -16,14 +16,16 @@ describe('template spec', () => {
   })
 
   it('should have a button', () => {
-    cy.get('button')
+    cy.get('.promise-btn')
   })
 
-  it('should be able to submit a promise', () => {
+  it('should be able to submit a promise and show it on the right side of the screen', () => {
+    let message = 'I promise to go to bed by 9PM'
     cy.get('input[placeholder*="keep it"]')
-    .type('I promise to go to bed by 9PM')
+    .type(message)
 
-    cy.get('button').click()
+    cy.get('.promise-btn').click()
+    cy.get('.promise-list').contains(message)
   })
 
 })

@@ -8,7 +8,7 @@ const ListContainer: React.FC<Prop> = ({
   promise
 }) => {
   return(
-    <div>
+    <div className='promise-list'>
       {promise}
     </div>
   )

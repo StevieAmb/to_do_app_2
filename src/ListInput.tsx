@@ -38,7 +38,7 @@ const ListInput: React.FC<Props> = ({
            <input                 // removed from the button
             type="submit"
             value="Submit Your Promise"
-            className="btn btn-dark btn-block" 
+            className="promise-btn" 
           />
           
       </div>
